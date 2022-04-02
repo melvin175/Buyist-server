@@ -29,7 +29,7 @@ app.use("/api/auth", require("./route/auth"));
 app.use("/api/private", require("./route/private"));
 
 app.get("/", (req, res) => {
-  res.send("Hello to Buyist API");
+  res.send("Hey there, welcome to the api!");
 });
 
 const PORT = process.env.port || 5000;
