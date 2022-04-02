@@ -29,7 +29,7 @@ app.use("/api/auth", require("./route/Auth"));
 app.use("/api/private", require("./route/Private"));
 
 app.get("/", (req, res) => {
-  res.send("Hey there, welcome to the api!");
+  res.send("Hey there, welcome to the api!!!");
 });
 
 process.on("unhandledRejection", (err) => {
