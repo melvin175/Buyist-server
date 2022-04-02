@@ -25,8 +25,8 @@ app.use(cors(corsOptions));
 app.use(errorHandler);
 
 app.use(express.json());
-app.use("/api/auth", require("./route/auth"));
-app.use("/api/private", require("./route/private"));
+app.use("/api/auth", require("./route/Auth"));
+app.use("/api/private", require("./route/Private"));
 
 app.get("/", (req, res) => {
   res.send("Hey there, welcome to the api!");
