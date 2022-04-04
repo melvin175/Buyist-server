@@ -28,11 +28,11 @@ app.use(express.json());
 app.use("/api/auth", require("./route/auth"));
 app.use("/api/private", require("./route/private"));
 
-app.use(express.static(__dirname + "/"));
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "./src/index.html"));
+app.get("/", (req, res) => {
+  res.send("Hello to Buyist API");
 });
-app.listen(process.env.PORT || 5000);
+
+const PORT = process.env.port || 5000;
 
 const server = app.listen(PORT, () =>
   console.log(`Server up and running on ${PORT}`)
