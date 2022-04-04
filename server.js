@@ -25,12 +25,18 @@ app.use(cors(corsOptions));
 app.use(errorHandler);
 
 app.use(express.json());
-app.use("/api/auth", require("./route/Auth"));
-app.use("/api/private", require("./route/Private"));
+app.use("/api/auth", require("./route/auth"));
+app.use("/api/private", require("./route/private"));
 
 app.get("/", (req, res) => {
-  res.send("Hey there, welcome to the api!!!");
+  res.send("Hello to Buyist API");
 });
+
+const PORT = process.env.port || 5000;
+
+const server = app.listen(PORT, () =>
+  console.log(`Server up and running on ${PORT}`)
+);
 
 process.on("unhandledRejection", (err) => {
   console.log(`Logged Error: ${err}`);
