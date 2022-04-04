@@ -32,6 +32,12 @@ app.get("/", (req, res) => {
   res.send("Hello to Buyist API");
 });
 
+const PORT = process.env.port || 5000;
+
+const server = app.listen(PORT, () =>
+  console.log(`Server up and running on ${PORT}`)
+);
+
 process.on("unhandledRejection", (err) => {
   console.log(`Logged Error: ${err}`);
   server.close(() => process.exit(1));
