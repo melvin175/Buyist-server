@@ -59,7 +59,7 @@ exports.forgotpassword = async (req, res, next) => {
 
     await user.save();
 
-    const resetUrl = `http:localhost:3000/passwordreset/${resetToken}`;
+    const resetUrl = `https://buyist-ecom.vercel.app/passwordreset/${resetToken}`;
 
     const message = `
     <h1> Forgot your passcode?</h1>
